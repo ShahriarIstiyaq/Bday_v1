@@ -9,48 +9,63 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="loader">
-                <button id="play">Start</button>
-            </div>
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-stars">✨✨✨</div>
+            <div class="loader-subtitle">A special day awaits...</div>
+            <button id="play">Start</button>
         </div>
     </div>
-    <audio class="song" controls loop>
+
+    <!-- AUDIO -->
+    <audio class="song" loop style="display: none;">
         <source src="music.mp3">
-        </source>
-        Your browser isn't invited for super fun audio time.
     </audio>
-    <canvas id="confetti"></canvas>
-    <div class="main">
-        <div class="container pt-5">
-            <div class="row">
 
-                <div class="col-12 col-xl-6 mx-auto">
-                    <img src="img/banner.png" alt="">
+    <!-- PHASE 1: CAKE SCENE -->
+    <div id="scene-cake" class="scene-cake">
+        <canvas id="confetti"></canvas>
+        <div class="cake-scene-inner">
+            <div class="banner-wrap">
+                <img src="img/banner.png" alt="Happy Birthday">
+            </div>
+            <div class="name-wrap">
+                <div id="name" class="area">Pumpkin</div>
+            </div>
+            <div class="cake-wrap">
+                <img src="img/cake.gif" alt="Birthday Cake">
+            </div>
+        </div>
+        <img src="img/Balloon-Border.png" class="balloon-border">
+
+        <div id="scroll-prompt" class="scroll-prompt">
+            <div>Scroll Down</div>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </div>
+
+    <!-- PHASE 2: LETTER SCENE -->
+    <div id="scene-letter" class="scene-letter">
+        <div class="paper-container">
+            <div id="paper" class="paper">
+                <div class="pinned-pic">
+                    <div class="pin"></div>
+                    <img src="Happy Birthday_files/bday_img.jpg" class="pinned-photo" alt="Birthday Photo">
                 </div>
-
-                <div class="col-12  text-center">
-                    <div id="name" class="area">Gaurav</div>
-                </div>
-
-                <div class="col-12 text-center">
+                <div class="letter-content">
+                    <div class="letter-salutation">Happy Birthday!</div>
                     <div class="type-wrap">
-                        <div id="typed-strings" class="typing">
-                            <h2>Happy Birthday <i id="nae">Gaurav</i></h2>
-                            <h2>Have a wonderful day</h2>
-                            <h2>Filled with joy and happiness.</h2>
+                        <div id="typed-strings" class="typing" style="display: none;">
+                            <p>Dont let bad experiences let you down.<br>Be who you are.<br>stay safe and stay
+                                beautiful.<br>I hope you have a great day and a great year ahead. <br> -Your brother.
+                            </p>
                         </div>
-                        <span id="typed" style="white-space:pre;"></span>
+                        <span id="typed" style="white-space:pre-wrap;"></span>
                     </div>
-                </div>
-
-                <div class="col-12 col-xl-3 cake">
-                    <img src="img/cake.gif" alt="">
                 </div>
             </div>
         </div>
-        <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
     </div>
 </body>
 <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
